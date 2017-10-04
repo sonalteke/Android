@@ -8,30 +8,27 @@ import android.widget.TextView;
 
 public class OneActivity extends AppCompatActivity {
 
-    public static final String KEY_MY_RESULT ="backbtn" ;
+    public static final String RES_ONE ="resone" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oneactivity);
 
-        Intent oneintent = getIntent();
-        Bundle bundle = oneintent.getExtras();
-        if (bundle != null) {
-            String myname = bundle.getString(MainActivity.KEY_MY_NAME);
-            Boolean bool = bundle.getBoolean(MainActivity.KEY_BOOL);
+        Intent parentintent=getIntent();
+        Bundle bundle= parentintent.getExtras();
+        String desc=bundle.getString(MainActivity.KEY_DESC);
 
-            ((TextView)findViewById(R.id.buttonone)).setText(myname + System.currentTimeMillis());
-        }
-        findViewById(R.id.backbtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+          ((TextView)findViewById(R.id.txtdesc)).setText(desc);
+      }
 
-                Intent intent=new Intent();
+      public void backbtn(View view){
+          Intent intent=new Intent();
+          Bundle bundle=new Bundle();
+          bundle.putString(RES_ONE,"I am from one activity");
+          intent.putExtras(bundle);
 
-                Bundle bundleback=new Bundle();
-                bundleback.putString(KEY_MY_RESULT,((TextView)findViewById(R.id.backbtn)).getText().toString());
-            }
-        });
-    }
+          setResult(RESULT_OK,intent);
+          finish();
+      }
 }

@@ -14,12 +14,39 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
         android:background="@android:color/background_dark"
-        android:onClick="threebtn"
         android:text="3"
         android:textColor="@android:color/background_light"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.245" />
+
+    <TextView
+        android:id="@+id/txtdesc"
+        android:layout_width="184dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/background_light"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/backbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/backbtn"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="backbtn2"
+        android:text="backbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
